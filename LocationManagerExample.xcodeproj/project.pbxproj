@@ -30,6 +30,7 @@
 		DB692FBD1A82ECF500CCDBDA /* MapLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = DB692FBC1A82ECF500CCDBDA /* MapLocation.m */; };
 		DB692FC01A85806300CCDBDA /* NewUITestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DB692FBF1A85806300CCDBDA /* NewUITestViewController.m */; };
 		DB692FC21A85DDD600CCDBDA /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DB692FC11A85DDD600CCDBDA /* Icon@2x.png */; };
+		DB692FC41A86DB8400CCDBDA /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB692FC31A86DB8400CCDBDA /* QuartzCore.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -78,6 +79,7 @@
 		DB692FBE1A85806300CCDBDA /* NewUITestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewUITestViewController.h; sourceTree = "<group>"; };
 		DB692FBF1A85806300CCDBDA /* NewUITestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewUITestViewController.m; sourceTree = "<group>"; };
 		DB692FC11A85DDD600CCDBDA /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x.png"; sourceTree = SOURCE_ROOT; };
+		DB692FC31A86DB8400CCDBDA /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +87,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DB692FC41A86DB8400CCDBDA /* QuartzCore.framework in Frameworks */,
 				DB54EB0E1A6CE9820083144A /* MapKit.framework in Frameworks */,
 				DB54EB021A6CCCBA0083144A /* AddressBook.framework in Frameworks */,
 				B116684518E5CEDD00D1E022 /* CoreGraphics.framework in Frameworks */,
@@ -128,6 +131,7 @@
 		B116684118E5CEDD00D1E022 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				DB692FC31A86DB8400CCDBDA /* QuartzCore.framework */,
 				DB54EB0D1A6CE9820083144A /* MapKit.framework */,
 				DB54EB011A6CCCBA0083144A /* AddressBook.framework */,
 				B116684218E5CEDD00D1E022 /* Foundation.framework */,

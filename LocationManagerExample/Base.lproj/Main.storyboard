@@ -135,7 +135,7 @@
             </objects>
             <point key="canvasLocation" x="373" y="307"/>
         </scene>
-        <!--Title-->
+        <!--Parking Space Inf-->
         <scene sceneID="5zb-CN-29q">
             <objects>
                 <viewController storyboardIdentifier="parkingSpaceInf" id="qGm-oS-JA2" customClass="ParkingSpaceInf" sceneMemberID="viewController">
@@ -144,23 +144,18 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" id="eb7-1q-pSe">
-                                <rect key="frame" x="-2" y="205" width="325" height="369"/>
+                                <rect key="frame" x="-2" y="-5" width="325" height="579"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </mapView>
-                            <navigationBar contentMode="scaleToFill" id="iwP-rZ-2mO">
-                                <rect key="frame" x="-62" y="0.0" width="382" height="44"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                            </navigationBar>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="NWI-ag-HxL">
-                                <rect key="frame" x="0.0" y="20" width="320" height="188"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="85"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.92156862745098034" green="0.92156862745098034" blue="0.92156862745098034" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="7bC-fO-lIu">
-                                <rect key="frame" x="8" y="221" width="53" height="30"/>
+                                <rect key="frame" x="16" y="103" width="53" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.92156862750000001" green="0.92156862750000001" blue="0.92156862750000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" title="close">
@@ -170,21 +165,9 @@
                                     <action selector="closeClick:" destination="qGm-oS-JA2" eventType="touchUpInside" id="Qao-4d-F7j"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="tTY-21-Rj9">
-                                <rect key="frame" x="8" y="253" width="53" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.92156862750000001" green="0.92156862750000001" blue="0.92156862750000001" alpha="1" colorSpace="calibratedRGB"/>
-                                <state key="normal" title="update">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="update:" destination="qGm-oS-JA2" eventType="touchUpInside" id="Efg-iX-hRL"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Title" id="mPp-gF-AIw"/>
                     <connections>
                         <outlet property="mapView" destination="eb7-1q-pSe" id="eOz-9M-sAh"/>
                         <outlet property="parkInf" destination="NWI-ag-HxL" id="hEr-G7-e05"/>
@@ -202,10 +185,17 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" id="sPU-Q4-4VL">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" tag="1" contentMode="left" mapType="standard" id="sPU-Q4-4VL">
+                                <rect key="frame" x="0.0" y="-5" width="320" height="573"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             </mapView>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="ogu-FR-6hB">
+                                <rect key="frame" x="0.0" y="170" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                <items>
+                                    <barButtonItem title="Item" id="jvr-jL-Pgs"/>
+                                </items>
+                            </toolbar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -213,6 +203,7 @@
                         <outlet property="MapView" destination="sPU-Q4-4VL" id="2YE-HZ-Yk1"/>
                         <outlet property="mapView" destination="sPU-Q4-4VL" id="5F9-cI-KfG"/>
                         <outlet property="searchDisplayController" destination="rEy-wg-aj4" id="D9E-oE-xjw"/>
+                        <outlet property="toolbar" destination="ogu-FR-6hB" id="JER-Fe-aRg"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KQh-mK-NE3" userLabel="First Responder" sceneMemberID="firstResponder"/>

@@ -19,6 +19,17 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    UIToolbar *curBar=[[UIToolbar alloc] initWithFrame:CGRectMake(0.0,0.0,320.0,90.0)];
+    [self.view addSubview:curBar];
+    curBar.translucent = true;
+    CALayer *TopBorder = [CALayer layer];
+    UIColor *borderColor = [UIColor colorWithRed:200.0/255 green:198.0/255 blue:189.0/255 alpha:1.0];
+    TopBorder.frame = CGRectMake(0.0f, curBar.frame.size.height, curBar.frame.size.width, 1.0f);
+    TopBorder.backgroundColor = borderColor.CGColor;
+    [self.view.layer addSublayer:TopBorder];
+    [self.view bringSubviewToFront:_parkInf];
+    
+    
     
     UILongPressGestureRecognizer *lpress = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(longPress:)];
     lpress.minimumPressDuration = 0.5;//按0.5秒响应longPress方法
@@ -29,7 +40,7 @@
     _mapView.mapType = MKMapTypeStandard;
     _mapView.delegate = self;
     
-    self.parkInf.text = [NSString stringWithFormat:@"Address:%@",address];
+    //self.parkInf.text = [NSString stringWithFormat:@"Address:%@",address];
     /////////////////
     
     //locate the address on map
@@ -105,8 +116,7 @@
     MKPointAnnotation*　pointAnnotation = nil;
     pointAnnotation = [[MKPointAnnotation alloc] init];
     pointAnnotation.coordinate = touchMapCoordinate;
-    pointAnnotation.title = @"名字";
-    
+    pointAnnotation.title = [NSString stringWithFormat:@"%@",city];
     [_mapView addAnnotation:pointAnnotation];
     
     
@@ -154,7 +164,7 @@
                    }];
     
     
-    //[pointAnnotation release];
+    
     
 }
 
@@ -174,7 +184,7 @@
     
     NSString *textTmp = self.parkInf.text;
     textTmp = [NSString stringWithFormat:@"%@\n%@\n%@",textTmp,addressNum,addressSt];
-    self.parkInf.text = textTmp;
+    //self.parkInf.text = textTmp;
     
     //read inf
     NSArray* lines = [self readfile];
@@ -192,7 +202,9 @@
                 if([direction isEqualToString:detail[1]]||[direction isEqualToString:@"all"])//judge navigation
                 {
                     NSString *textTmp = self.parkInf.text;
-                    textTmp = [NSString stringWithFormat:@"%@\n%@\n",textTmp,lines[index]];
+                    
+                    NSString *newinf = [NSString stringWithFormat:@"%@\t%@\t%@\t%@\t%@",detail[0],detail[1],detail[2],detail[3],detail[5]];
+                    textTmp = [NSString stringWithFormat:@"%@\n%@",textTmp,newinf];
                     self.parkInf.text = textTmp;
                     //self.infText.text = textTmp;
                 }
@@ -317,7 +329,6 @@
             
             //[self analyze];
 
-            
             return;
         }
         default:
@@ -329,12 +340,6 @@
 #pragma mark -
 #pragma mark Map View Delegate Methods
 
-
-- (IBAction)update:(id)sender {
-    
-    [self analyze];
-    
-}
 
 
 - (IBAction)closeClick:(id)sender {
@@ -375,7 +380,7 @@
                     
                     NSString *textTmp = self.parkInf.text;
                     textTmp = [NSString stringWithFormat:@"%@\n%@",textTmp,judgeInf];
-                    self.parkInf.text = textTmp;
+                    //self.parkInf.text = textTmp;
                     return true;
                 }
                 errinf = judgeInf;
@@ -405,7 +410,7 @@
                     
                     NSString *textTmp = self.parkInf.text;
                     textTmp = [NSString stringWithFormat:@"%@\n%@",textTmp,judgeInf];
-                    self.parkInf.text = textTmp;
+                    //self.parkInf.text = textTmp;
                     return true;
                 }
                 errinf = judgeInf;

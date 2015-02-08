@@ -22,8 +22,13 @@
     UIToolbar *curBar=[[UIToolbar alloc] initWithFrame:CGRectMake(0.0,0.0,320.0,60.0)];
     [self.view addSubview:curBar];
     curBar.translucent = true;
+    CALayer *TopBorder = [CALayer layer];
+    UIColor *borderColor = [UIColor colorWithRed:200.0/255 green:198.0/255 blue:189.0/255 alpha:1.0];
+    TopBorder.frame = CGRectMake(0.0f, 60.0f, curBar.frame.size.width, 1.0f);
+    TopBorder.backgroundColor = borderColor.CGColor;
+    [self.view.layer addSublayer:TopBorder];
     
-     
+    
     self.locationManager = [[CLLocationManager alloc] init];
     if ([self.locationManager respondsToSelector:@selector
          (requestWhenInUseAuthorization)]) {
@@ -37,6 +42,8 @@
         _mapView.showsUserLocation = YES;
         [_mapView setUserTrackingMode:MKUserTrackingModeFollow animated:YES];
     }
+    
+
     
     
 }

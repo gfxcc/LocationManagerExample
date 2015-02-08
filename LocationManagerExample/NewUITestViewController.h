@@ -12,9 +12,11 @@
 #import <MapKit/MapKit.h>
 #import <CoreLocation/CoreLocation.h>
 #import <AddressBook/AddressBook.h>
+#import <QuartzCore/QuartzCore.h>
 
 @interface NewUITestViewController : UIViewController
 @property (weak, nonatomic) IBOutlet MKMapView *mapView;
 
+@property (weak, nonatomic) IBOutlet UIToolbar *toolbar;
 
 @end
